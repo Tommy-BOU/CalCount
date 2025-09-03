@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CalCounter } from './cal-counter';
+import { FoodItem } from './food-item';
 
-describe('CalCounter', () => {
-  let component: CalCounter;
-  let fixture: ComponentFixture<CalCounter>;
+describe('FoodItem', () => {
+  let component: FoodItem;
+  let fixture: ComponentFixture<FoodItem>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CalCounter]
+      imports: [FoodItem]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CalCounter);
+    fixture = TestBed.createComponent(FoodItem);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

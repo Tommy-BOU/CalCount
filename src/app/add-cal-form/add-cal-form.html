@@ -13,12 +13,4 @@
     </div>
     <div class="field"><input type="button" value="Submit" (click)="addFood()" /></div>
   </form>
-
-  <ul>
-    @for (food of foodList; track $index) {
-    <li>{{ food.name }} - {{ food.calories }}</li>
-    }
-    <p>TOTAL : {{ totalFoods }} foods - {{ totalCalories }} calories</p>
-    <p>(Maximum daily recommendation : 2000 calories)</p>
-  </ul>
 </div>

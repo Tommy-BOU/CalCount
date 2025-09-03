@@ -1,0 +1,9 @@
+<div class="component">
+<ul>
+    @for (food of foodList; track $index) {
+        <app-food-item [food]="food"></app-food-item>
+    }
+    <p>TOTAL : {{ totalFoods }} foods - {{ totalCalories }} calories</p>
+    <p>(Maximum daily recommendation : 2000 calories)</p>
+  </ul> 
+</div>
