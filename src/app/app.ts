@@ -1,9 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CalCounter } from "./cal-counter/cal-counter";
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CalCounter],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

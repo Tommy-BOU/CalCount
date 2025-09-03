@@ -1,0 +1,24 @@
+<div class="component">
+  <form>
+    <!-- <div class="field">
+            <input type="search">
+        </div> -->
+    <div class="field">
+      <label for="foodName">Food name</label>
+      <input type="text" name="foodName" id="foodName" [(ngModel)]="foodName" />
+    </div>
+    <div class="field">
+      <label for="foodCalories">Calories value</label>
+      <input type="number" name="foodCalories" id="foodCalories" [(ngModel)]="foodCalories" />
+    </div>
+    <div class="field"><input type="button" value="Submit" (click)="addFood()" /></div>
+  </form>
+
+  <ul>
+    @for (food of foodList; track $index) {
+    <li>{{ food.name }} - {{ food.calories }}</li>
+    }
+    <p>TOTAL : {{ totalFoods }} foods - {{ totalCalories }} calories</p>
+    <p>(Maximum daily recommendation : 2000 calories)</p>
+  </ul>
+</div>
