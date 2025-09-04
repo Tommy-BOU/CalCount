@@ -14,7 +14,8 @@ export class CalList {
   foodService: FoodService = inject(FoodService);
   originalFoodList: FoodInfo[] = this.foodService.getList();
   foodList: FoodInfo[] = this.originalFoodList;
-  total: TotalInfo = this.foodService.getTotal();
+  originalTotal: TotalInfo = this.foodService.getTotal();
+  total: TotalInfo = this.originalTotal;
   filters: string[] = [];
 
   /**
@@ -33,6 +34,12 @@ export class CalList {
     console.log(this.filters);
     this.foodList = this.originalFoodList;
     this.foodList = this.filterList(this.foodList, this.filters);
+    this.countTotal();
+  }
+
+  countTotal(){
+    this.total.totalCalories = this.foodList.reduce((total, food) => total + food.calories, 0);
+    this.total.totalFoods = this.foodList.length;
   }
 
   filterList(foods: FoodInfo[], filters: string[]): FoodInfo[]{
