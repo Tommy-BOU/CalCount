@@ -14,7 +14,7 @@
     </div>
   </div>
   <ul>
-    @for (food of (foodList | calorieFilter:filters) ; track $index) {
+    @for (food of foodList ; track $index) {
     <app-food-item [food]="food"></app-food-item> 
     }
     <p class="total">TOTAL : {{ total.totalFoods }} foods - {{ total.totalCalories }} calories</p>
