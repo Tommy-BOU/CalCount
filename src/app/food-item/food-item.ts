@@ -1,5 +1,5 @@
 import { Component, input, inject } from '@angular/core';
-import { FoodInterface } from '../interfaces/food-interface';
+import { FoodInfo } from '../interfaces/food-info';
 import { FoodService } from '../services/food-service';
 @Component({
   selector: 'app-food-item',
@@ -9,7 +9,8 @@ import { FoodService } from '../services/food-service';
 })
 export class FoodItem {
   foodService = inject(FoodService);
-  food = input.required<FoodInterface>();
+  food = input.required<FoodInfo>();
+  componentRef = document.getElementById('food-item');
 
   removeFood() {
     if (confirm('Are you sure you want to remove this food?')) {

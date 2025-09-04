@@ -1,12 +1,13 @@
 
-li{
-    margin: 10px 0;
-}
 
 .list-item{
     display: flex;
     justify-content: center;
     gap: 10px;
+    
+    li{
+        margin: 10px 0;
+    }
 
     button{
         cursor: pointer;

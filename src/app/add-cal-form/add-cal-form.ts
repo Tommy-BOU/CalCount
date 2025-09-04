@@ -16,7 +16,7 @@ export class AddCalForm {
     if (this.foodName === '' || this.foodCalories === 0) {
       return;
     }
-    this.foodService.addToList({ id: this.foodService.getList().length ,name: this.foodName, calories: this.foodCalories, date: Date.now() });
+    this.foodService.addToList({ id: this.foodService.getList().length, name: this.foodName, calories: this.foodCalories, date: Date.now() });
 
     this.foodName = '';
     this.foodCalories = 0;

@@ -1,9 +1,24 @@
 <div class="component">
-<ul>
-    @for (food of foodList; track $index) {
-        <app-food-item [food]="food"></app-food-item>
+  <div class="checkboxs">
+    <div class="checkbox">
+      <label for="low">low calories</label>
+      <input type="checkbox" name="low" id="low" value="low" (click)="applyFilter($event)"/>
+    </div>
+    <div class="checkbox">
+      <label for="medium">medium calories</label>
+      <input type="checkbox" name="medium" id="medium" value="medium" (click)="applyFilter($event)"/>
+    </div>
+    <div class="checkbox">
+      <label for="high">high calories</label>
+      <input type="checkbox" name="high" id="high" value="high" (click)="applyFilter($event)"/>
+    </div>
+  </div>
+  <ul>
+    @for (food of (foodList | calorieFilter:filters) ; track $index) {
+    <app-food-item [food]="food"></app-food-item> 
     }
-    <p>TOTAL : {{ totalFoods }} foods - {{ totalCalories }} calories</p>
+    <p class="total">TOTAL : {{ total.totalFoods }} foods - {{ total.totalCalories }} calories</p>
     <p>(Maximum daily recommendation : 2000 calories)</p>
-  </ul> 
+  </ul>
+  <button (click)="clearList()">Clear list</button>
 </div>

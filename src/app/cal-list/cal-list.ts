@@ -1,26 +1,39 @@
 import { Component, inject } from '@angular/core';
 import { FoodService } from '../services/food-service';
-import { FoodInterface } from '../interfaces/food-interface';
+import { FoodInfo } from '../interfaces/food-info';
 import { FoodItem } from '../food-item/food-item';
+import { TotalInfo } from '../interfaces/total-info';
+import { CalorieFilterPipe } from '../pipes/CalorieFilterPipe';
 @Component({
   selector: 'app-cal-list',
-  imports: [FoodItem],
+  imports: [FoodItem, CalorieFilterPipe],
   templateUrl: './cal-list.html',
   styleUrl: './cal-list.scss'
 })
 export class CalList {
-  totalCalories: number = 0;
-  totalFoods: number = 0;
   foodService: FoodService = inject(FoodService);
-  foodList: FoodInterface[] = this.foodService.getList();
+  foodList: FoodInfo[] = this.foodService.getList();
+  total: TotalInfo = this.foodService.getTotal();
+  filters: string[] = [];
 
-  constructor() {
-    this.setupTotal();
+  /**
+   * Called when a filter checkbox is clicked.
+   * @param event The click event.
+   */
+  applyFilter(event: Event){
+    console.log((event.target as HTMLInputElement).value);
+    console.log((event.target as HTMLInputElement).checked);
+    if ((event.target as HTMLInputElement).checked && !this.filters.includes((event.target as HTMLInputElement).value)){
+      this.filters.push((event.target as HTMLInputElement).value);
+    }
+    else{
+      this.filters.splice(this.filters.indexOf((event.target as HTMLInputElement).value), 1);
+    }
+    console.log(this.filters);
   }
 
-  setupTotal() {
-    this.totalCalories = this.foodList.reduce((total, food) => total + food.calories, 0);
-    this.totalFoods = this.foodList.length;
+  clearList(){
+    this.foodService.clearList();
   }
 }
 
