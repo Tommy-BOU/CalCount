@@ -1,13 +1,13 @@
 main{
     font-family: roboto;
     text-align: center;
-    background-color: bisque;
     height: 100vh;
     width: 100vw;
-    padding-top: 20px;
-
+    
     header{
-        
+        padding: 20px 0 10px 0;
+        background-color: bisque;
+        border-bottom: 1px solid #9e9e9e;
         h3{
             color:cornflowerblue ;
         }

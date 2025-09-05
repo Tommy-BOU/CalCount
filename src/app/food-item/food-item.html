@@ -1,4 +1,7 @@
-<div class="list-item" id="food-item">
-    <li>{{ food().name }} - {{ food().calories }}</li>
-    <button (click)="removeFood()" >X</button>
+<div [ngClass]="{'list-item' : true, 'low' : food().calories <= 200, 'medium' : food().calories > 200 && food().calories <= 500, 'high' : food().calories > 500 }" id="food-item">
+    <div class="infos">
+        <li>{{ food().name }} - {{ food().calories }}</li>
+        <button (click)="removeFood()" >X</button>
+    </div>
+    <p> added on {{ food().date | date:'dd/MM/yyyy HH:mm:ss' }}</p>
 </div>

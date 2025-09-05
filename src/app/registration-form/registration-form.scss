@@ -14,10 +14,11 @@ h2 {
   .form-field {
     display: flex;
     flex-direction: column;
-    width: 33%;
+    width: 20%;
     margin-bottom: 10px;
 
     label {
+        align-self: flex-start;
       margin-bottom: 5px;
     }
 
