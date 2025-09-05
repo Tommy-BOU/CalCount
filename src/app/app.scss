@@ -5,15 +5,32 @@ main{
     height: 100vh;
     width: 100vw;
     padding-top: 20px;
-}
 
-h3{
-    color:cornflowerblue ;
-}
+    header{
+        
+        h3{
+            color:cornflowerblue ;
+        }
+        
+        h1{
+            background-image: linear-gradient(rgb(218, 119, 5), rgb(255, 31, 154));
+            color: transparent;
+            background-clip: text;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
 
-h1{
-    background-image: linear-gradient(rgb(218, 119, 5), rgb(255, 31, 154));
-    color: transparent;
-    background-clip: text;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        nav{
+            margin-top: 20px;
+            a{
+                text-decoration: none;
+                color: cornflowerblue;
+                margin: 10px;
+            }
+
+            .active{
+                text-decoration: underline;
+                color: brown;
+            }
+        }
+    }
 }

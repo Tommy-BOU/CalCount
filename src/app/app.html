@@ -1,6 +1,14 @@
 <main class="main">
-  <h3>WELCOME TO</h3>
-  <H1>CALCOUNT</H1>
+  <header>
+    <div class="title">
+      <h3>WELCOME TO</h3>
+      <H1>CALCOUNT</H1>
+    </div>
+    <nav>
+      <a [routerLink]="['/']" routerLinkActive="active">Home</a>
+      <a [routerLink]="['/help']" routerLinkActive="active">Help</a>
+      <a [routerLink]="['/register']" routerLinkActive="active">Register</a>
+    </nav>
+  </header>
   <router-outlet />
 </main>
-
